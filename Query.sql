@@ -1,23 +1,23 @@
 SELECT * FROM db_university.students
-where year(date_of_birth) = 1990;
+WHERE year(date_of_birth) = 1990;
 
 SELECT * FROM db_university.courses
-where cfu > 10
+WHERE cfu > 10
 
 SELECT * 
 FROM db_university.students
 WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) > 30;
 
 SELECT * FROM db_university.courses
-where period like 'I %' && year = 1
+WHERE year = 1 AND period LIKE 'I sem%'
 
 SELECT * FROM db_university.exams
-where date = '2020-06-20' && hour > '14:00:00'
+WHERE hour > '14:00:00' AND date = '2020-06-20'
 
 SELECT * FROM db_university.degrees
-where level = 'magistrale'
+WHERE LIKE 'mag%'
 
-SELECT count(*) FROM db_university.departments
+SELECT COUNT(*) FROM db_university.departments
 
 SELECT * FROM db_university.teachers
-where phone is null
+WHERE phone IS NULL
